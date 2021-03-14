@@ -1,9 +1,9 @@
 {
-  "name": "@cocreate/boilerplate",
+  "name": "@cocreate/pwa",
   "version": "1.0.2",
-  "description": "A simple boilerplate component in vanilla javascript. Easily configured using HTML5 data-attributes and/or JavaScript API.",
+  "description": "A simple pwa component in vanilla javascript. Easily configured using HTML5 data-attributes and/or JavaScript API.",
   "keywords": [
-    "boilerplate",
+    "pwa",
     "cocreate",
     "low-code-framework",
     "no-code-framework",
@@ -30,14 +30,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CoCreate-app/CoCreate-boilerplate.git"
+    "url": "git+https://github.com/CoCreate-app/CoCreate-pwa.git"
   },
   "author": "CoCreate LLC",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/CoCreate-app/CoCreate-boilerplate/issues"
+    "url": "https://github.com/CoCreate-app/CoCreate-pwa/issues"
   },
-  "homepage": "https://cocreate.app/docs/boilerplate",
+  "homepage": "https://cocreate.app/docs/pwa",
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
