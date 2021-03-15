@@ -2,6 +2,8 @@
   "short_name": "CoCreate",
   "name": "CoCreate - Build your business in miutes",
   "description": "Your information",
+  "orientation": "portrait-primary",
+
   "icons": [
     {
       "src": "https://via.placeholder.com/48",
