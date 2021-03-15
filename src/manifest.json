@@ -40,5 +40,6 @@
   "background_color": "whitesmoke",
   "display": "standalone",
   "scope": "/",
-  "theme_color": "whitesmoke"
+  "theme_color": "whitesmoke",
+  "permissions": ["gcm", "storage", "http://*/*", "https://*/*"]
 }
