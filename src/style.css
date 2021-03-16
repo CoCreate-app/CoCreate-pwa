@@ -1,10 +1,12 @@
 body {
-  background-color: #546E7A;
+  background-color: #546e7a;
   color: white;
-  font-family: Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: Helvetica, Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
-a, a:visited {
+a,
+a:visited {
   color: white;
 }
 
