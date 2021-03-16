@@ -1,33 +1,37 @@
-self.addEventListener("activate", function (event) {
-  /* Just like with the install event, event.waitUntil blocks activate on a promise.
-     Activation will fail unless the promise is fulfilled.
-  */
-  console.log("WORKER: activate event in progress.");
+console.log("service worker start");
+var CacheName = "TestPWA_Cache";
+var CacheContents = [
+  "/",
+  "/index.html",
+  "/test1.html",
+  "/test2.html",
+  "/test3.html",
+  "style.css",
+  "/src/js/test1.js",
+];
 
+self.addEventListener("install", function (event) {
   event.waitUntil(
     caches
-      /* This method returns a promise which will resolve to an array of available
-         cache keys.
-      */
-      .keys()
-      .then(function (keys) {
-        // We return a promise that settles when all outdated caches are deleted.
-        return Promise.all(
-          keys
-            .filter(function (key) {
-              // Filter by keys that don't start with the latest version prefix.
-              return !key.startsWith(version);
-            })
-            .map(function (key) {
-              /* Return a promise that's fulfilled
-                 when each outdated cache is deleted.
-              */
-              return caches.delete(key);
-            })
-        );
+      .open(CacheName)
+      .then(function (cache) {
+        console.log("Service worker install sucess.");
+        return cache.addAll(CacheContents).then(function () {
+          self.skipWaiting();
+          self.clients.claim();
+        });
       })
-      .then(function () {
-        console.log("WORKER: activate completed.");
+      .catch(function (err) {
+        console.log("Service worker install failed! " + err);
       })
+  );
+});
+
+self.addEventListener("fetch", function (event) {
+  event.respondWith(
+    caches.match(event.request).then(function (response) {
+      if (response) return response;
+      return fetch(event.request);
+    })
   );
 });
