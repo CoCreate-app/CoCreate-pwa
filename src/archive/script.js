@@ -7,6 +7,7 @@ const butInstall = document.getElementById("butInstall");
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker
     .register("./service-worker.js")
+    .register("./sw.js")
     .then(function (registration) {
       registration.addEventListener("updatefound", function () {
         // If updatefound is fired, it means that there's

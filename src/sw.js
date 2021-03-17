@@ -2,6 +2,9 @@ const CACHE_STATIC_NAME = "static-v1";
 const CACHE_DYNAMIC_NAME = "dynamic-v2";
 const CACHE_INMUTABLE_NAME = "inmutable-v1";
 const CACHE_DYNAMIC_LIMIT = 50;
+const divInstall = document.getElementById("installContainer");
+const butInstall = document.getElementById("butInstall");
+
 
 function limpiarCache(cacheName, numeroItems) {
   caches.open(cacheName).then((cache) => {
@@ -32,10 +35,10 @@ self.addEventListener("install", (e) => {
       "/index.html",
       "./css/style.css",
       "./js/app.js",
-      "./pages/offline.html",
-      "./pages/page1.html",
-      "./pages/page2.html",
-      "./pages/page3.html",
+      "./offline.html",
+      "./test1.html",
+      "./test2.html",
+      "./test3.html",
     ]);
   });
   const cacheInmutable = caches
