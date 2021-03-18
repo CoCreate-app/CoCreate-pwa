@@ -1,44 +1,59 @@
-if (navigator.serviceWorker) {
-  navigator.serviceWorker.register("sw.js");
+const divInstall = document.getElementById('installContainer');
+const butInstall = document.getElementById('butInstall');
+
+/* Only register a service worker if it's supported */
+if ('serviceWorker' in navigator) {
+    //navigator.serviceWorker.register('service-worker.js').then(console.log('success')).catch(console.log('fail'));
+    window.addEventListener("load", function() {
+        navigator.serviceWorker
+            .register("sw.js")
+            .then(res => console.log("service worker registered"))
+            .catch(err => console.log("service worker not registered", err))
+    })
 }
 
-// if ( window.caches ) {
+/**
+ * Warn the page must be served over HTTPS
+ * The `beforeinstallprompt` event won't fire if the page is served over HTTP.
+ * Installability requires a service worker with a fetch event handler, and
+ * if the page isn't served over HTTPS, the service worker won't load.
+ */
+if (window.location.protocol === 'http:') {
+    const requireHTTPS = document.getElementById('requireHTTPS');
+    const link = requireHTTPS.querySelector('a');
+    link.href = window.location.href.replace('http://', 'https://');
+    requireHTTPS.classList.remove('hidden');
+}
 
-//     // caches.open('prueba-1');
+window.addEventListener('beforeinstallprompt', (event) => {
+    console.log('👍', 'beforeinstallprompt', event);
+    // Stash the event so it can be triggered later.
+    window.deferredPrompt = event;
+    // Remove the 'hidden' class from the install button container
+    divInstall.classList.toggle('hidden', false);
+});
 
-//     caches.open('prueba-2');
+butInstall.addEventListener('click', async() => {
+    console.log('👍', 'butInstall-clicked');
+    const promptEvent = window.deferredPrompt;
+    if (!promptEvent) {
+        // The deferred prompt isn't available.
+        return;
+    }
+    // Show the install prompt.
+    promptEvent.prompt();
+    // Log the result
+    const result = await promptEvent.userChoice;
+    console.log('👍', 'userChoice', result);
+    // Reset the deferred prompt variable, since
+    // prompt() can only be called once.
+    window.deferredPrompt = null;
+    // Hide the install button.
+    divInstall.classList.toggle('hidden', true);
+});
 
-//     // caches.has('prueba-2').then( console.log );
-
-//     caches.delete('prueba-1').then( console.log );
-
-//     caches.open('cache-v1.1').then( cache => {
-
-//         // cache.add('/index.html');
-
-//         cache.addAll([
-//             '/index.html',
-//             '/css/style.css',
-//             '/img/main.jpg'
-//         ]).then( () => {
-
-//             // cache.delete('/css/style.css');
-
-//             cache.put( 'index.html', new Response('Hola Mundo') );
-
-//         });
-
-//         // cache.match('/index.html')
-//         //         .then( res => {
-
-//         //             res.text().then( console.log );
-
-//         //         });
-
-//     });
-
-//     caches.keys().then( keys => {
-//         console.log(keys);
-//     });
-
-// };
+window.addEventListener('appinstalled', (event) => {
+    console.log('👍', 'appinstalled', event);
+    // Clear the deferredPrompt so it can be garbage collected
+    window.deferredPrompt = null;
+});
