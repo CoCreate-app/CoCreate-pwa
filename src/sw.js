@@ -27,25 +27,27 @@ function limpiarCacheViejo() {
 
 self.addEventListener("install", (e) => {
     console.log('[ServiceWorker] Install');
-    const cacheProm = caches.open(CACHE_STATIC_NAME).then((cache) => {
-        return cache.addAll([
-            "./",
-            "./index.html",
-            "./css/style.css",
-            "./css/test1.css",
-            "./css/test2.css",
-            "./css/test3.css",
-            "./js/app.js",
-            "./js/test1.js",
-            "./js/test2.js",
-            "./js/test3.js",
-            "./test1.html",
-            "./test2.html",
-            "./test3.html",
-            "./offline.html",
+    const cacheProm = caches
+        .open(CACHE_STATIC_NAME)
+        .then((cache) => {
+            return cache.addAll([
+                "./",
+                "./index.html",
+                "./css/style.css",
+                "./css/test1.css",
+                "./css/test2.css",
+                "./css/test3.css",
+                "./js/app.js",
+                "./js/test1.js",
+                "./js/test2.js",
+                "./js/test3.js",
+                "./test1.html",
+                "./test2.html",
+                "./test3.html",
+                "./offline.html",
 
-        ]);
-    });
+            ]);
+        });
 
     const cacheInmutable = caches
         .open(CACHE_INMUTABLE_NAME)
@@ -64,25 +66,27 @@ self.addEventListener("activate", (e) => {
 });
 
 self.addEventListener("fetch", (e) => {
-    e.respondWith(
-        caches.match(e.request).then((cachesObj) => {
-            if (!!cachesObj) {
-                return cachesObj;
-            }
-            return fetch(e.request).then((newResp) => {
-                caches
-                    .open(CACHE_DYNAMIC_NAME)
-                    .then((cache) => {
-                        cache.put(e.request, newResp);
-                        limpiarCache(CACHE_DYNAMIC_NAME, 50);
-                    })
-                    .catch((err) => {
-                        if (e.request.headers.get("accept").includes("text/html")) {
-                            return fetch("./offline.html");
-                        }
-                    });
-                return newResp.clone();
-            });
-        })
-    );
+    if (e.request.mode === 'navigate') {
+        e.respondWith(
+            caches.match(e.request).then((cachesObj) => {
+                if (!!cachesObj) {
+                    return cachesObj;
+                }
+                return fetch(e.request).then((newResp) => {
+                    caches
+                        .open(CACHE_DYNAMIC_NAME)
+                        .then((cache) => {
+                            cache.put(e.request, newResp);
+                            limpiarCache(CACHE_DYNAMIC_NAME, 50);
+                        })
+                        .catch((err) => {
+                            if (e.request.headers.get("accept").includes("text/html")) {
+                                return fetch("./offline.html");
+                            }
+                        });
+                    return newResp.clone();
+                });
+            })
+        );
+    }
 });
