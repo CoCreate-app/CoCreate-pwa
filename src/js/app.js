@@ -1,16 +1,18 @@
 const divInstall = document.getElementById('installContainer');
 const butInstall = document.getElementById('butInstall');
+const butCache = document.getElementById('butCache');
 
 /* Only register a service worker if it's supported */
-if ('serviceWorker' in navigator) {
-    //navigator.serviceWorker.register('service-worker.js').then(console.log('success')).catch(console.log('fail'));
-    window.addEventListener("load", function() {
-        navigator.serviceWorker
-            .register("sw.js")
-            .then(res => console.log("service worker registered"))
-            .catch(err => console.log("service worker not registered", err))
-    })
-}
+// if ('serviceWorker' in navigator) {
+//     //navigator.serviceWorker.register('service-worker.js').then(console.log('success')).catch(console.log('fail'));
+//     window.addEventListener("load", function() {
+//         navigator.serviceWorker
+//             .register("sw.js")
+//             .then(res => console.log("service worker registered"))
+//             .catch(err => console.log("service worker not registered", err))
+//     })
+// }
+
 
 /**
  * Warn the page must be served over HTTPS
@@ -56,4 +58,29 @@ window.addEventListener('appinstalled', (event) => {
     console.log('👍', 'appinstalled', event);
     // Clear the deferredPrompt so it can be garbage collected
     window.deferredPrompt = null;
+});
+
+function uncacheFileInCache(cacheName, fileName) {
+    if ('serviceWorker' in navigator) {
+        caches.open(cacheName).then(function(cache) {
+            cache.delete(fileName).then(function(response) {
+
+            });
+        })
+    }
+}
+
+function clearCache(cache) {
+    if ('serviceWorker' in navigator) {
+        caches.keys().then(function(cacheNames) {
+            cacheNames.forEach(function(cacheName) {
+                if (cacheName == cache)
+                    caches.delete(cacheName);
+            });
+        });
+    }
+}
+
+butCache.addEventListener('click', async() => {
+    uncacheFileInCache('dynamic-v2', '/cocreate/cocreate-pwa/src/css/style.css');
 });
