@@ -82,5 +82,5 @@ function clearCache(cache) {
 }
 
 butCache.addEventListener('click', async() => {
-    uncacheFileInCache('dynamic-v2', '/cocreate/cocreate-pwa/src/css/style.css');
+    uncacheFileInCache('dynamic-v2', './src/css/style.css');
 });
