@@ -1,18 +1,8 @@
-const divInstall = document.getElementById('installContainer');
-const butInstall = document.getElementById('butInstall');
-const butCache = document.getElementById('butCache');
+import cache from './cache.js'
 
-/* Only register a service worker if it's supported */
-// if ('serviceWorker' in navigator) {
-//     //navigator.serviceWorker.register('service-worker.js').then(console.log('success')).catch(console.log('fail'));
-//     window.addEventListener("load", function() {
-//         navigator.serviceWorker
-//             .register("sw.js")
-//             .then(res => console.log("service worker registered"))
-//             .catch(err => console.log("service worker not registered", err))
-//     })
-// }
 
+const installContainer = document.getElementById('installContainer');
+const installBtn = document.getElementById('installBtn');
 
 /**
  * Warn the page must be served over HTTPS
@@ -32,11 +22,11 @@ window.addEventListener('beforeinstallprompt', (event) => {
     // Stash the event so it can be triggered later.
     window.deferredPrompt = event;
     // Remove the 'hidden' class from the install button container
-    divInstall.classList.toggle('hidden', false);
+    installContainer.classList.toggle('hidden', false);
 });
 
-butInstall.addEventListener('click', async() => {
-    console.log('👍', 'butInstall-clicked');
+installBtn.addEventListener('click', async() => {
+    console.log('👍', 'installBtn-clicked');
     const promptEvent = window.deferredPrompt;
     if (!promptEvent) {
         // The deferred prompt isn't available.
@@ -51,7 +41,7 @@ butInstall.addEventListener('click', async() => {
     // prompt() can only be called once.
     window.deferredPrompt = null;
     // Hide the install button.
-    divInstall.classList.toggle('hidden', true);
+    installContainer.classList.toggle('hidden', true);
 });
 
 window.addEventListener('appinstalled', (event) => {
@@ -60,27 +50,31 @@ window.addEventListener('appinstalled', (event) => {
     window.deferredPrompt = null;
 });
 
-function uncacheFileInCache(cacheName, fileName) {
-    if ('serviceWorker' in navigator) {
-        caches.open(cacheName).then(function(cache) {
-            cache.delete(fileName).then(function(response) {
+let workerPath = 'sw.js'
+// if (config && config.serviceWorker)
+//     workerPath = config.serviceWorker
 
-            });
-        })
-    }
-}
-
-function clearCache(cache) {
+window.addEventListener("load", function(event) {
     if ('serviceWorker' in navigator) {
-        caches.keys().then(function(cacheNames) {
-            cacheNames.forEach(function(cacheName) {
-                if (cacheName == cache)
-                    caches.delete(cacheName);
-            });
+        navigator.serviceWorker.getRegistration(workerPath).then(registration => {
+            if(registration && registration.active) { 
+                console.log('Service Worker Active')
+            } else {
+                navigator.serviceWorker.register(workerPath)
+                .then(reg => {
+                    reg.onupdatefound = () => {
+                        const installingWorker = reg.installing;
+                        installingWorker.onstatechange = () => {
+                            console.log('Service Worker', installingWorker.state);
+                        }
+                    }
+                })
+                .catch(err => console.log('SW ERROR', err));
+
+            }
         });
     }
-}
-
-butCache.addEventListener('click', async() => {
-    uncacheFileInCache('dynamic-v2', './src/css/style.css');
 });
+
+
+export default {cache}

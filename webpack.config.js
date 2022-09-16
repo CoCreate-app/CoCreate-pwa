@@ -3,15 +3,14 @@ const TerserPlugin = require("terser-webpack-plugin")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 let isProduction = process.env.NODE_ENV === "production"
 const { CleanWebpackPlugin } = require("clean-webpack-plugin")
-const HtmlWebpackPlugin = require("html-webpack-plugin")
 
 module.exports = {
   entry: {
-    "CoCreate-pwa": "./src/CoCreate-pwa.js",
+    "CoCreate-pwa": "./src/index.js",
   },
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: isProduction ? "[name].min.js" : "[name][hash].js",
+    filename: isProduction ? "[name].min.js" : "[name].js",
     libraryTarget: "umd",
     libraryExport: "default",
     library: ["CoCreate", "pwa"],
@@ -23,10 +22,6 @@ module.exports = {
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: "[name].css",
-    }),
-
-    new HtmlWebpackPlugin({
-      template: "./src/index.html",
     }),
   ],
   // Default mode for Webpack is production.
@@ -81,6 +76,10 @@ module.exports = {
       minSize: 200,
       // maxSize: 99999,
       //minChunks: 1,
+
+      cacheGroups: {
+        defaultVendors: false,
+      },
     },
   },
 }

@@ -9,15 +9,11 @@
     <!-- import the webpage's stylesheet -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/test1.css" />
     <!-- Manifest -->
     <link rel="manifest" href="../manifest.json" />
-    <!--<link rel="manifest" href="./manifest.webmanifest">  -->
 </head>
 
 <body class="test1-bg-color">
-
-    <h1>InstallableR - TEST 1</h1>
     <nav class="navbar navbar-expand-sm bg-dark">
         <!-- Links -->
         <ul class="navbar-nav">
@@ -48,15 +44,10 @@
 
     <!-- Install button, hidden by default -->
     <div id="installContainer" class="hidden">
-        <button id="butInstall" type="button">Install</button>
+        <button id="installBtn" type="button">Install</button>
     </div>
 
-    <!-- include the Glitch button to show what the webpage is about and
-          to make it easier for folks to view source and remix -->
-    <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
-    <script src="https://button.glitch.me/button.js"></script>
-    <!-- import the webpage's javascript file -->
-    <script src="../js/app.js" defer></script>
+    <script src="../../dist/CoCreate-pwa.js" defer></script>
 </body>
 
 </html>
