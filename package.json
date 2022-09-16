@@ -39,6 +39,11 @@
     "url": "https://github.com/CoCreate-app/CoCreate-pwa/issues"
   },
   "homepage": "https://cocreate.app/docs/pwa",
+  "funding": {
+    "type": "GitHub Sponsors ❤",
+    "url": "https://github.com/sponsors/CoCreate-app"
+  },
+  "main": "./src/index.js",
   "devDependencies": {
     "@babel/core": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
