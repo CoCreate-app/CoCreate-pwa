@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.1.0...v1.1.1) (2022-09-16)
+
+
+### Bug Fixes
+
+* missing main in package.json ([a7de0c4](https://github.com/CoCreate-app/CoCreate-pwa/commit/a7de0c4dc812eef6006fe2e0fe96a1c717cf5439))
+
 # [1.1.0](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.0.0...v1.1.0) (2022-09-16)
 
 
