@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.0.0...v1.1.0) (2022-09-16)
+
+
+### Features
+
+* dynamically cache files for offline support and keep them current when online ([0ff4e22](https://github.com/CoCreate-app/CoCreate-pwa/commit/0ff4e222a766c1f1c5bc78d61b18420bf46d6e32))
+
 # 1.0.0 (2021-11-01)
 
 
