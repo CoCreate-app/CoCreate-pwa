@@ -1,7 +1,7 @@
 {
     "short_name": "CoCreate",
-    "name": "CoCreate - Build your business in miutes",
-    "description": "Your information",
+    "name": "CoCreate",
+    "description": "Build your business in miutes",
     "orientation": "portrait-primary",
 
     "icons": [{
@@ -42,11 +42,35 @@
         {
             "src": "./images/icons/icon-512x512.png",
             "type": "image/png",
-            "sizes": "512x512"
+            "sizes": "512x512",
+            "purpose": "maskable"
         }
     ],
-    "start_url": "index.html",
+    "start_url": "/",
     "background_color": "whitesmoke",
-    "display": "standalone",
-    "theme_color": "blue"
+    "display": "Fullscreen",
+    "theme_color": "blue",
+    "screenshots": [{
+        "src": "./images/screenshot-1.png",
+        "type": "image/png",
+        "sizes": "512x512"
+    }],
+    "categories": "productivity",
+    "file_handlers": [
+        {
+            "action": "/open-file",
+            "accept": {
+                "text/*": [".txt"]
+            }
+        }
+   ],
+   "share_target": {
+    "action": "/receive-share/",
+    "method": "GET",
+    "params": {
+       "title": "shared_title",
+       "url": "shared_url"
+    }
+ }
+
 }
