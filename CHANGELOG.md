@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.1.1...v1.2.0) (2022-09-28)
+
+
+### Features
+
+* updates serviceWorker if online and if serviceWorker has changed. ([cc74fb6](https://github.com/CoCreate-app/CoCreate-pwa/commit/cc74fb619ace71128c1df5d4e60e5baaf04f46df))
+
 ## [1.1.1](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.1.0...v1.1.1) (2022-09-16)
 
 
