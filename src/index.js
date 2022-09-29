@@ -60,8 +60,8 @@ async function persistData() {
 
 if ('serviceWorker' in navigator) {
     let workerPath = '/sw.js'
-    if (window.config && window.config.serviceWorker) {
-        workerPath = window.config.serviceWorker
+    if (window.CoCreateConfig && window.CoCreateConfig.serviceWorker) {
+        workerPath = window.CoCreateConfig.serviceWorker
         window.localStorage.setItem("serviceWorker", workerPath);
     } else {
         workerPath =  window.localStorage.getItem("serviceWorker")
