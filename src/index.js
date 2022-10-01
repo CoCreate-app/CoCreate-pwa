@@ -1,4 +1,4 @@
-import cache from './cache.js'
+import {deleteCache, deleteFile} from './cache.js'
 
 const button = document.querySelector('[actions*="install"]');
 
@@ -96,4 +96,4 @@ if ('serviceWorker' in navigator) {
 }
 
 
-export default {cache}
+export default {deleteCache, deleteFile, persistData}
