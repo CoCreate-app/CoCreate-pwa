@@ -70,7 +70,6 @@ if ('serviceWorker' in navigator) {
     let isPwa = true
     if (workerPath) {
         navigator.serviceWorker.getRegistrations().then(registrations => {
-            console.log(registrations);
             if (registrations.length === 0 || isPwa == true)
             window.addEventListener("load", function(event) {
                     navigator.serviceWorker.getRegistration(workerPath).then(registration => {
