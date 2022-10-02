@@ -1,3 +1,10 @@
+## [1.2.6](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.2.5...v1.2.6) (2022-10-02)
+
+
+### Bug Fixes
+
+* bump @cocreate/hosting and @cocreate/socket-client ([7f17e42](https://github.com/CoCreate-app/CoCreate-pwa/commit/7f17e421e77811f1e8be1b2e78afc28e345d83e1))
+
 ## [1.2.5](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.2.4...v1.2.5) (2022-10-01)
 
 
