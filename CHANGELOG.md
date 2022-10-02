@@ -1,3 +1,10 @@
+## [1.2.7](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.2.6...v1.2.7) (2022-10-02)
+
+
+### Bug Fixes
+
+* minor bug fixes ([23713fe](https://github.com/CoCreate-app/CoCreate-pwa/commit/23713fe7b1726cc8685db16084ac4b253f78e387))
+
 ## [1.2.6](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.2.5...v1.2.6) (2022-10-02)
 
 
