@@ -16,7 +16,7 @@ const button = document.querySelector('[actions*="install"]');
 // }
 
 window.addEventListener('beforeinstallprompt', (event) => {
-    console.log('👍', 'beforeinstallprompt', event);
+    // console.log('👍', 'beforeinstallprompt', event);
     // Stash the event so it can be triggered later.
     window.deferredPrompt = event;
     // Remove the 'hidden' class from the install button container
@@ -26,7 +26,7 @@ window.addEventListener('beforeinstallprompt', (event) => {
 
 if (button) {
     button.addEventListener('click', async() => {
-        console.log('👍', 'installBtn-clicked');
+        // console.log('👍', 'installBtn-clicked');
         const promptEvent = window.deferredPrompt;
         if (!promptEvent) {
             // The deferred prompt isn't available.
@@ -46,7 +46,7 @@ if (button) {
 }
 
 window.addEventListener('appinstalled', (event) => {
-    console.log('👍', 'appinstalled', event);
+    // console.log('👍', 'appinstalled', event);
     // Clear the deferredPrompt so it can be garbage collected
     window.deferredPrompt = null;
 });
@@ -54,7 +54,7 @@ window.addEventListener('appinstalled', (event) => {
 async function persistData() {
     if (navigator.storage && navigator.storage.persist) {
       const result = await navigator.storage.persist();
-      console.log(`Data persisted: ${result}`);
+    //   console.log(`Data persisted: ${result}`);
     }
 }
 
@@ -81,7 +81,7 @@ if ('serviceWorker' in navigator) {
                                 reg.onupdatefound = () => {
                                     const installingWorker = reg.installing;
                                     installingWorker.onstatechange = () => {
-                                        console.log('Service Worker', installingWorker.state);
+                                        // console.log('Service Worker', installingWorker.state);
                                     }
                                 }
                             })
