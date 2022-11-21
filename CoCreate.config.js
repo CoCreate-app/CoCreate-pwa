@@ -10,7 +10,7 @@ module.exports = {
             "collection": "files",
             "document_id": "",
             "key": "src",
-            "data":{
+            "document": {
                 "name": "index.html",
                 "path": "/docs/pwa/index.html",
                 "domains": [
