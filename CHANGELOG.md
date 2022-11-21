@@ -1,3 +1,16 @@
+# [1.3.0](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.2.7...v1.3.0) (2022-11-21)
+
+
+### Bug Fixes
+
+* commented console.logs ([38851a5](https://github.com/CoCreate-app/CoCreate-pwa/commit/38851a5fcae5b4d650811a3e9e04d01a702cdfd9))
+* ignore dist ([091e426](https://github.com/CoCreate-app/CoCreate-pwa/commit/091e426599af0a1637c9f4797e73c56cc46062ae))
+
+
+### Features
+
+* if cached return cache then request and store to get current version fto apply on next reload ([49ef323](https://github.com/CoCreate-app/CoCreate-pwa/commit/49ef323964187a136734179c94d002bbfabb30f8))
+
 ## [1.2.7](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.2.6...v1.2.7) (2022-10-02)
 
 
