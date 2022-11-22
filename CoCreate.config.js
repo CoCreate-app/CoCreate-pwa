@@ -1,18 +1,18 @@
 module.exports = {
     "config": {
         "apiKey": "2061acef-0451-4545-f754-60cf8160",
-        "organization_Id": "5ff747727005da1c272740ab",
+        "organization_id": "5ff747727005da1c272740ab",
         "host": "general.cocreate.app"
     },
-    
-    "sources": [{
+    "sources": [
+        {
             "entry": "./docs/index.html",
             "collection": "files",
-            "document_id": "",
-            "key": "src",
             "document": {
+                "_id": "637ca5ac50234ef1671ce327",
                 "name": "index.html",
                 "path": "/docs/pwa/index.html",
+                "src": "{{source}}",
                 "domains": [
                     "cocreate.app",
                     "general.cocreate.app"
@@ -23,21 +23,5 @@ module.exports = {
                 "website_id": "614298c2829b690010a5c031"
             }
         }
-    ],
-
-	"extract": {
-		"directory": "./src/",
-		"extensions": [
-			"js",
-			"css",
-			"html"
-		],
-		"ignores": [
-			"node_modules",
-			"vendor",
-			"bower_components",
-			"archive"
-		]
-	}
+    ]
 }
-
