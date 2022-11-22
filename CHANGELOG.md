@@ -1,3 +1,11 @@
+## [1.3.5](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.3.4...v1.3.5) (2022-11-22)
+
+
+### Bug Fixes
+
+* apply src: {{source}} to CoCreate.config ([553fc62](https://github.com/CoCreate-app/CoCreate-pwa/commit/553fc625f3023ce780422fea415e0830b3033356))
+* workflow docs ([55c5987](https://github.com/CoCreate-app/CoCreate-pwa/commit/55c5987ff2141d670eb631bada37388ef3212eb1))
+
 ## [1.3.4](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.3.3...v1.3.4) (2022-11-21)
 
 
