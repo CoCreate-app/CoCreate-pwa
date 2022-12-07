@@ -59,13 +59,13 @@ async function persistData() {
 }
 
 if ('serviceWorker' in navigator) {
-    let workerPath = '/sw.js'
-    if (window.CoCreateConfig && window.CoCreateConfig.serviceWorker) {
+    let workerPath
+    if (window.CoCreateConfig && window.CoCreateConfig.serviceWorker)
         workerPath = window.CoCreateConfig.serviceWorker
-        window.localStorage.setItem("serviceWorker", workerPath);
-    } else {
-        workerPath =  window.localStorage.getItem("serviceWorker")
-    }
+    else
+        workerPath =  window.localStorage.getItem("serviceWorker") || '/sw.js'
+
+    window.localStorage.setItem("serviceWorker", workerPath);
 
     let isPwa = true
     if (workerPath) {
