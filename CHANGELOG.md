@@ -1,3 +1,11 @@
+## [1.3.16](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.3.15...v1.3.16) (2022-12-07)
+
+
+### Bug Fixes
+
+* bump dependencies ([d00c28c](https://github.com/CoCreate-app/CoCreate-pwa/commit/d00c28cf3e7c2f54f9abf9d39c8c6f2beeda5ca7))
+* set defualt serviceworker path if not defined ([16cfd4c](https://github.com/CoCreate-app/CoCreate-pwa/commit/16cfd4c4c8ab7d12b59699dc15d4314ae467729e))
+
 ## [1.3.15](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.3.14...v1.3.15) (2022-12-04)
 
 
