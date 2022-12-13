@@ -1,3 +1,10 @@
+## [1.3.22](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.3.21...v1.3.22) (2022-12-13)
+
+
+### Bug Fixes
+
+* removed un used devDependencies ([516eb3f](https://github.com/CoCreate-app/CoCreate-pwa/commit/516eb3f390b33bb87454b9018822ed16cb586495))
+
 ## [1.3.21](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.3.20...v1.3.21) (2022-12-13)
 
 
