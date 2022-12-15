@@ -1,3 +1,10 @@
+## [1.3.23](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.3.22...v1.3.23) (2022-12-15)
+
+
+### Bug Fixes
+
+* add missing dev dependency style-loader ([8cf9154](https://github.com/CoCreate-app/CoCreate-pwa/commit/8cf9154999a7ee08454512b89d051a403690c9fb))
+
 ## [1.3.22](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.3.21...v1.3.22) (2022-12-13)
 
 
