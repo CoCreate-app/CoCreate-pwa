@@ -1,3 +1,10 @@
+## [1.3.32](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.3.31...v1.3.32) (2022-12-30)
+
+
+### Bug Fixes
+
+* update config sources to use template  braces with entry on src ([dc5f648](https://github.com/CoCreate-app/CoCreate-pwa/commit/dc5f648a673382a290cb987e1e4f93d00c9af7a1))
+
 ## [1.3.31](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.3.30...v1.3.31) (2022-12-29)
 
 
