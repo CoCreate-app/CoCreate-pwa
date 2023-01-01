@@ -1,3 +1,10 @@
+## [1.3.34](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.3.33...v1.3.34) (2023-01-01)
+
+
+### Bug Fixes
+
+* docs sanbox overflow ([c750dd8](https://github.com/CoCreate-app/CoCreate-pwa/commit/c750dd8dd10e954b502bbda373032bc724eaf4c9))
+
 ## [1.3.33](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.3.32...v1.3.33) (2022-12-31)
 
 
