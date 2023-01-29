@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.3.40...v1.4.0) (2023-01-29)
+
+
+### Features
+
+* import @cocreate/local-storage ([55b8cb7](https://github.com/CoCreate-app/CoCreate-pwa/commit/55b8cb735321bcc1e07690609c417b8426d6996b))
+
 ## [1.3.40](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.3.39...v1.3.40) (2023-01-27)
 
 
