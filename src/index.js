@@ -1,4 +1,5 @@
 import {deleteCache, deleteFile} from './cache.js'
+import localStorage from '@cocreate/local-storage'
 
 const button = document.querySelector('[actions*="install"]');
 
@@ -63,9 +64,9 @@ if ('serviceWorker' in navigator) {
     if (window.CoCreateConfig && window.CoCreateConfig.serviceWorker)
         workerPath = window.CoCreateConfig.serviceWorker
     else
-        workerPath =  window.localStorage.getItem("serviceWorker") || '/sw.js'
+        workerPath =  localStorage.getItem("serviceWorker") || '/sw.js'
 
-    window.localStorage.setItem("serviceWorker", workerPath);
+    localStorage.setItem("serviceWorker", workerPath);
 
     let isPwa = true
     if (workerPath) {
