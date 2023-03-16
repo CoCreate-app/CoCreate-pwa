@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.4.5...v1.5.0) (2023-03-16)
+
+
+### Features
+
+* replaced get-value and set-value with a super charged version of CoCreate-events ([2f9d9bf](https://github.com/CoCreate-app/CoCreate-pwa/commit/2f9d9bf70d4b53c536e671234891da8496a6c2f0))
+
 ## [1.4.5](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.4.4...v1.4.5) (2023-02-01)
 
 
