@@ -1,3 +1,10 @@
+## [1.5.4](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.5.3...v1.5.4) (2023-04-11)
+
+
+### Bug Fixes
+
+* renamed domains to hosts ([a909322](https://github.com/CoCreate-app/CoCreate-pwa/commit/a909322171ec06b01503f684a361baf41dd0478b))
+
 ## [1.5.3](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.5.2...v1.5.3) (2023-03-30)
 
 
