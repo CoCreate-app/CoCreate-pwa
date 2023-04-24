@@ -1,3 +1,10 @@
+## [1.6.2](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.6.1...v1.6.2) (2023-04-24)
+
+
+### Bug Fixes
+
+* bump [@cocreate](https://github.com/cocreate) dependencies ([d00a1fa](https://github.com/CoCreate-app/CoCreate-pwa/commit/d00a1fa57203a9bd1eed9f20e971427507a0c401))
+
 ## [1.6.1](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.6.0...v1.6.1) (2023-04-24)
 
 
