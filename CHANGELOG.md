@@ -1,3 +1,10 @@
+## [1.6.1](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.6.0...v1.6.1) (2023-04-24)
+
+
+### Bug Fixes
+
+* removed uglifyjs-webpack-plugin ([2f857b1](https://github.com/CoCreate-app/CoCreate-pwa/commit/2f857b164ec59d04e17af140f35fcebef1f2b139))
+
 # [1.6.0](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.5.6...v1.6.0) (2023-04-24)
 
 
