@@ -1,3 +1,11 @@
+## [1.6.3](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.6.2...v1.6.3) (2023-04-24)
+
+
+### Bug Fixes
+
+* updated worrkflows to v3 and node version 16 ([1b111aa](https://github.com/CoCreate-app/CoCreate-pwa/commit/1b111aab13a57b7fa03f8f372498d5167266067b))
+* workflow node version updated  16 ([a5fcc5b](https://github.com/CoCreate-app/CoCreate-pwa/commit/a5fcc5b69415bdb78d6f9add928d14344b591c82))
+
 ## [1.6.2](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.6.1...v1.6.2) (2023-04-24)
 
 
