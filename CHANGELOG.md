@@ -1,3 +1,14 @@
+## [1.6.4](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.6.3...v1.6.4) (2023-04-30)
+
+
+### Bug Fixes
+
+* add screenshot to assets ([e52804c](https://github.com/CoCreate-app/CoCreate-pwa/commit/e52804cecbf851b7c73c0bc1b321a99dd6592cbb))
+* fullscreen target updated to fullscreen fullscreen-target ([eb2376a](https://github.com/CoCreate-app/CoCreate-pwa/commit/eb2376a099826c9c5671dd4154cc3608f82765ed))
+* package-lock.json and pnpm-lock.yaml added to .gitignore ([d627642](https://github.com/CoCreate-app/CoCreate-pwa/commit/d627642730244d841c34782f2752cda7f2885786))
+* removed toogle fullscreen icons. now using css content ([deabb66](https://github.com/CoCreate-app/CoCreate-pwa/commit/deabb66887f749a95cd0ddb76c2c62d3678d9655))
+* update manifest and assets ([a51bdf5](https://github.com/CoCreate-app/CoCreate-pwa/commit/a51bdf57c0c176d4a3b274fe6423ed47107ff73b))
+
 ## [1.6.3](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.6.2...v1.6.3) (2023-04-24)
 
 
