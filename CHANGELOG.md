@@ -1,3 +1,10 @@
+## [1.6.6](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.6.5...v1.6.6) (2023-05-01)
+
+
+### Bug Fixes
+
+* update manifest.json to manifest.webmanifest ([7d87421](https://github.com/CoCreate-app/CoCreate-pwa/commit/7d8742168da2f35da43ce926988e058c85278302))
+
 ## [1.6.5](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.6.4...v1.6.5) (2023-05-01)
 
 
