@@ -1,3 +1,10 @@
+## [1.6.5](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.6.4...v1.6.5) (2023-05-01)
+
+
+### Bug Fixes
+
+* replace fontawesome with svg ([a4ec18a](https://github.com/CoCreate-app/CoCreate-pwa/commit/a4ec18a6595be7e58ac8592688aabf0de1cf16f2))
+
 ## [1.6.4](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.6.3...v1.6.4) (2023-04-30)
 
 
