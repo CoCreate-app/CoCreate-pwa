@@ -17,7 +17,8 @@ module.exports = {
                     "general.cocreate.app"
                 ],
                 "directory": "/docs/pwa",
-                "content-type": "text/html",
+                "parentDirectory": "{{parentDirectory}}",
+                "content-type": "{{content-type}}",
                 "public": "true",
                 "website_id": "614298c2829b690010a5c031"
             }
