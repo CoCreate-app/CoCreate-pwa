@@ -1,3 +1,12 @@
+## [1.6.8](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.6.7...v1.6.8) (2023-05-19)
+
+
+### Bug Fixes
+
+* apikey renamed to key ([bfbd983](https://github.com/CoCreate-app/CoCreate-pwa/commit/bfbd9834e0b302204452de9c1939085bcc8a05b3))
+* apikey renamed to key ([9ffc209](https://github.com/CoCreate-app/CoCreate-pwa/commit/9ffc209e551e532e141c6df2b48fe3dc61d816a4))
+* update packages to latest version. This commit updates various packages in the dependencies section of the package.json file to their latest published versions, thereby fixing multiple bugs and improving overall performance. ([d867a43](https://github.com/CoCreate-app/CoCreate-pwa/commit/d867a435c785028f50af4fbe8fb1d92a4e5af80c))
+
 ## [1.6.7](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.6.6...v1.6.7) (2023-05-06)
 
 
