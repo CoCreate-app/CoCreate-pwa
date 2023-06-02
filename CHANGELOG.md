@@ -1,3 +1,10 @@
+## [1.6.10](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.6.9...v1.6.10) (2023-06-02)
+
+
+### Bug Fixes
+
+* format demo html ([bd13e86](https://github.com/CoCreate-app/CoCreate-pwa/commit/bd13e86b210fc71ce5c3c5f5e604174647c407fd))
+
 ## [1.6.9](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.6.8...v1.6.9) (2023-05-21)
 
 
