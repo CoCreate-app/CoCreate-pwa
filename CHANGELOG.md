@@ -1,3 +1,11 @@
+## [1.6.12](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.6.11...v1.6.12) (2023-06-04)
+
+
+### Bug Fixes
+
+* replaced secert GITHUB_TOKEN with GITHUB ([c3f7512](https://github.com/CoCreate-app/CoCreate-pwa/commit/c3f7512e74bc3b12261b2be084d9f7e70da1db05))
+* Update dependencies versions for [@cocreate](https://github.com/cocreate) libraries ([369596f](https://github.com/CoCreate-app/CoCreate-pwa/commit/369596f69223b47220e3b4d3e7690eb0e85d7377))
+
 ## [1.6.11](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.6.10...v1.6.11) (2023-06-04)
 
 
