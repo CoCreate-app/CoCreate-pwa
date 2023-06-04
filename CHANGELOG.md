@@ -1,3 +1,10 @@
+## [1.6.11](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.6.10...v1.6.11) (2023-06-04)
+
+
+### Bug Fixes
+
+* **semantic-release:** worklow error solved by running node version 14 ([4df1cd5](https://github.com/CoCreate-app/CoCreate-pwa/commit/4df1cd5d839b8a6918c301bd2bab38457ad95fcd))
+
 ## [1.6.10](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.6.9...v1.6.10) (2023-06-02)
 
 
