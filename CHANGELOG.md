@@ -1,3 +1,10 @@
+## [1.6.13](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.6.12...v1.6.13) (2023-06-04)
+
+
+### Bug Fixes
+
+* Refactor CoCreate.config.js to remove hard-coded credentials ([0b3bde9](https://github.com/CoCreate-app/CoCreate-pwa/commit/0b3bde9e5d20098774700240a5df1608ca7f2ebc))
+
 ## [1.6.12](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.6.11...v1.6.12) (2023-06-04)
 
 
