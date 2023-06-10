@@ -26,7 +26,6 @@
   "scripts": {
     "start": "npx webpack --config webpack.config.js --watch",
     "build": "SET NODE_ENV=production npx webpack --config webpack.config.js",
-    "docs": "node ./node_modules/@cocreate/docs/src/index.js",
     "postinstall": "node ./node_modules/@cocreate/cli/check-coc.js"
   },
   "repository": {
@@ -59,7 +58,6 @@
     "webpack-log": "^3.0.1"
   },
   "dependencies": {
-    "@cocreate/docs": "^1.8.13",
     "@cocreate/local-storage": "^1.7.7"
   }
 }
