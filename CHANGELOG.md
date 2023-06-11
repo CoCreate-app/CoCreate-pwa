@@ -1,3 +1,10 @@
+## [1.6.16](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.6.15...v1.6.16) (2023-06-11)
+
+
+### Bug Fixes
+
+* renamed hosts to host. the value can be a string or an array of strings ([4be62be](https://github.com/CoCreate-app/CoCreate-pwa/commit/4be62be2be57732d6acddb62d7ec4b2c775da52e))
+
 ## [1.6.15](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.6.14...v1.6.15) (2023-06-10)
 
 
