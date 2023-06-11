@@ -1,3 +1,10 @@
+## [1.6.19](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.6.18...v1.6.19) (2023-06-11)
+
+
+### Bug Fixes
+
+* postintall error ([d0109ed](https://github.com/CoCreate-app/CoCreate-pwa/commit/d0109ed9d30191d2695e176b8a2e2b8c696f22b8))
+
 ## [1.6.18](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.6.17...v1.6.18) (2023-06-11)
 
 
