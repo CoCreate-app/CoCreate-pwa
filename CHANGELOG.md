@@ -1,3 +1,11 @@
+## [1.6.22](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.6.21...v1.6.22) (2023-06-11)
+
+
+### Bug Fixes
+
+* testing workflow ([9a1ee18](https://github.com/CoCreate-app/CoCreate-pwa/commit/9a1ee180bc4a96dbade75570d017b22a3e07cc7f))
+* testing workflow ([89c6a99](https://github.com/CoCreate-app/CoCreate-pwa/commit/89c6a993e5c652dcb0741ec56554b74a245e3f0f))
+
 ## [1.6.21](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.6.20...v1.6.21) (2023-06-11)
 
 
