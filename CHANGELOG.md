@@ -1,3 +1,10 @@
+## [1.6.18](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.6.17...v1.6.18) (2023-06-11)
+
+
+### Bug Fixes
+
+* @cocreate/cli moved to dependencies ([647ed0b](https://github.com/CoCreate-app/CoCreate-pwa/commit/647ed0b23ff6d966bd4e03a02b5de6551cc80ac2))
+
 ## [1.6.17](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.6.16...v1.6.17) (2023-06-11)
 
 
