@@ -3,7 +3,7 @@ const cacheBtn = document.getElementById('cacheBtn');
 function deleteCache(cache) {
     if ('serviceWorker' in navigator) {
         return caches.delete(key);
-        
+
         // caches.keys().then(function(cacheNames) {
         //     cacheNames.forEach(function(cacheName) {
         //         if (cacheName == cache)
@@ -25,8 +25,8 @@ function deleteCache(cache) {
 
 function deleteFile(cacheName, fileName) {
     if ('serviceWorker' in navigator) {
-        caches.open(cacheName).then(function(cache) {
-            cache.delete(fileName).then(function(response) {
+        caches.open(cacheName).then(function (cache) {
+            cache.delete(fileName).then(function (response) {
                 return response
                 // console.log(cacheName, fileName, response)
             });
@@ -36,9 +36,9 @@ function deleteFile(cacheName, fileName) {
 
 
 if (cacheBtn) {
-    cacheBtn.addEventListener('click', function() {
+    cacheBtn.addEventListener('click', function () {
         deleteFile('dynamic-v2', '/CoCreate-components/CoCreate-pwa/src/index.js');
     });
 }
 
-export {deleteCache, deleteFile}
+export { deleteCache, deleteFile }

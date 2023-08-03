@@ -4,8 +4,8 @@ module.exports = {
     "host": "",
     "sources": [
         {
-            "collection": "files",
-            "document": {
+            "array": "files",
+            "object": {
                 "_id": "637ca5ac50234ef1671ce327",
                 "name": "index.html",
                 "path": "/docs/pwa/index.html",
