@@ -64,7 +64,7 @@ if ('serviceWorker' in navigator) {
     if (window.CoCreateConfig && window.CoCreateConfig.serviceWorker)
         workerPath = window.CoCreateConfig.serviceWorker
     else
-        workerPath = localStorage.getItem("serviceWorker") || '/sw.js'
+        workerPath = localStorage.getItem("serviceWorker") || '/service-worker.js'
 
     localStorage.setItem("serviceWorker", workerPath);
 
@@ -86,7 +86,7 @@ if ('serviceWorker' in navigator) {
                         if (registration && registration.active && registration.active.scriptURL.includes(workerPath)) {
                             console.log('Service Worker Active')
                         } else {
-                            navigator.serviceWorker.register(workerPath, { scope: '/' })
+                            navigator.serviceWorker.register(workerPath)
                                 .then(reg => {
                                     reg.onupdatefound = () => {
                                         const installingWorker = reg.installing;
