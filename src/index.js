@@ -1,4 +1,4 @@
-import {deleteCache, deleteFile} from './cache.js'
+import { deleteCache, deleteFile } from './cache.js'
 import localStorage from '@cocreate/local-storage'
 
 const button = document.querySelector('[actions*="install"]');
@@ -26,7 +26,7 @@ window.addEventListener('beforeinstallprompt', (event) => {
 });
 
 if (button) {
-    button.addEventListener('click', async() => {
+    button.addEventListener('click', async () => {
         // console.log('👍', 'installBtn-clicked');
         const promptEvent = window.deferredPrompt;
         if (!promptEvent) {
@@ -54,8 +54,8 @@ window.addEventListener('appinstalled', (event) => {
 
 async function persistData() {
     if (navigator.storage && navigator.storage.persist) {
-      const result = await navigator.storage.persist();
-    //   console.log(`Data persisted: ${result}`);
+        const result = await navigator.storage.persist();
+        //   console.log(`Data persisted: ${result}`);
     }
 }
 
@@ -64,36 +64,44 @@ if ('serviceWorker' in navigator) {
     if (window.CoCreateConfig && window.CoCreateConfig.serviceWorker)
         workerPath = window.CoCreateConfig.serviceWorker
     else
-        workerPath =  localStorage.getItem("serviceWorker") || '/sw.js'
+        workerPath = localStorage.getItem("serviceWorker") || '/sw.js'
 
     localStorage.setItem("serviceWorker", workerPath);
+
+    let cache
+    if (window.CoCreateConfig && window.CoCreateConfig.cache)
+        cache = window.CoCreateConfig.cache
+    else
+        cache = localStorage.getItem("cache") || 'false'
+
+    localStorage.setItem("cache", cache);
+    workerPath += `?cache=${cache}`
 
     let isPwa = true
     if (workerPath) {
         navigator.serviceWorker.getRegistrations().then(registrations => {
             if (registrations.length === 0 || isPwa == true)
-            window.addEventListener("load", function(event) {
+                window.addEventListener("load", function () {
                     navigator.serviceWorker.getRegistration(workerPath).then(registration => {
-                        if (registration && registration.active) { 
+                        if (registration && registration.active && registration.active.scriptURL.includes(workerPath)) {
                             console.log('Service Worker Active')
                         } else {
-                            navigator.serviceWorker.register(workerPath)
-                            .then(reg => {
-                                reg.onupdatefound = () => {
-                                    const installingWorker = reg.installing;
-                                    installingWorker.onstatechange = () => {
-                                        // console.log('Service Worker', installingWorker.state);
+                            navigator.serviceWorker.register(workerPath, { scope: '/' })
+                                .then(reg => {
+                                    reg.onupdatefound = () => {
+                                        const installingWorker = reg.installing;
+                                        installingWorker.onstatechange = () => {
+                                            // console.log('Service Worker', installingWorker.state);
+                                        }
                                     }
-                                }
-                            })
-                            .catch(err => console.log('SW ERROR', err)); 
+                                })
+                                .catch(err => console.log('SW ERROR', err));
                         }
                     });
-            });
+                });
         });
 
     }
 }
 
-
-export default {deleteCache, deleteFile, persistData}
+export default { deleteCache, deleteFile, persistData }
