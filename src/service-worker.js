@@ -1,16 +1,32 @@
-import indexeddb from '@cocreate/indexeddb'
+/********************************************************************************
+ * Copyright (C) 2023 CoCreate and Contributors.
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published
+ * by the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program. If not, see <https://www.gnu.org/licenses/>.
+ ********************************************************************************/
+
+// Commercial Licensing Information:
+// For commercial use of this software without the copyleft provisions of the AGPLv3,
+// you must obtain a commercial license from CoCreate LLC.
+// For details, visit <https://cocreate.app/licenses/> or contact us at sales@cocreate.app.
 
 const cacheName = "dynamic-v2";
 let organization_id = ""
-let storage = false
+let storage = true
 
 const queryString = self.location.search;
 const queryParams = new URLSearchParams(queryString);
 let cacheType = queryParams.get('cache');
-
-function deleteCache(key) {
-    return caches.delete(key);
-}
 
 self.addEventListener("install", (e) => {
     console.log('Service Worker Installing')
@@ -21,24 +37,46 @@ self.addEventListener("activate", async (e) => {
     e.waitUntil(clients.claim());
 });
 
-self.addEventListener("fetch", (e) => {
-    if (!(e.request.url.indexOf('http') === 0) || e.request.method === 'POST') return;
-
-    if (!storage) {
-        let file = 'query file content from indexeddb and set as File-Content'
-        const modifiedRequest = new Request(e.request, {
-            headers: new Headers({
-                'File-Content': file.src,
-                'Content-Type': file['content-type']
-            })
-        });
-        e.request = modifiedRequest
-    }
-
+self.addEventListener("fetch", async (e) => {
     e.respondWith(
         caches
             .match(e.request)
-            .then((cacheResponse) => {
+            .then(async (cacheResponse) => {
+                if (!(e.request.url.indexOf('http') === 0) || e.request.method === 'POST') return;
+
+                if (!storage) {
+                    const url = new URL(e.request.url);
+                    const hostname = url.host;
+                    const pathname = url.pathname;
+
+                    let file = await readFile({
+                        database: '5ff747727005da1c272740ab',
+                        array: 'files',
+                        filter: {
+                            path: hostname,
+                            host: '*'
+                        }
+                    });
+
+                    if (file) {
+                        // console.log('Host:', hostname);
+                        console.log('Pathname:', pathname);
+                        console.log('file', file)
+                    }
+
+                    if (file && file.object && file.object[0]) {
+                        file = file.object[0]
+
+                        const modifiedRequest = new Request(e.request, {
+                            headers: new Headers({
+                                'File-Content': file.src,
+                                'Content-Type': file['content-type']
+                            })
+                        });
+                        e.request = modifiedRequest
+                    }
+                }
+
                 if (!navigator.onLine && !!cacheResponse && cacheType !== 'false')
                     return cacheResponse;
                 else {
@@ -46,6 +84,7 @@ self.addEventListener("fetch", (e) => {
                         if (!organization_id)
                             organization_id = networkResponse.headers.get('organization')
 
+                        storage = networkResponse.headers.get('storage')
                         if (cacheType && cacheType !== 'false') {
                             caches.open(cacheName).then((cache) => {
                                 if (networkResponse.status !== 206 && networkResponse.status !== 502) {
@@ -56,7 +95,7 @@ self.addEventListener("fetch", (e) => {
                                         if (networkModified !== cacheModified) {
                                             self.clients.matchAll().then((clients) => {
                                                 clients.forEach((client) => {
-                                                    client.postMessage({ action: 'cacheType' }); // Send a custom message
+                                                    client.postMessage({ action: 'cacheType', cacheType }); // Send a custom message
                                                     console.log(`file ${cacheType} has been triggered`)
                                                 });
                                             });
@@ -82,6 +121,52 @@ self.addEventListener("fetch", (e) => {
             })
     );
 });
+
+
+function readFile(data) {
+    return new Promise((resolve) => {
+        const request = indexedDB.open(data.database);
+
+        request.onsuccess = function () {
+            const db = request.result
+
+            const transaction = db.transaction(data.array, "readonly");
+            const objectStore = transaction.objectStore(data.array);
+            const cursorRequest = objectStore.openCursor();
+
+            cursorRequest.onsuccess = function () {
+                const cursor = cursorRequest.result;
+                if (cursor) {
+                    const file = cursor.value;
+                    if (!file || !file.src || !file.path || !file.host)
+                        cursor.continue();
+                    else if (file.path !== data.filter.path || !file.host.includes(data.filter.host))
+                        cursor.continue();
+                    else {
+                        db.close()
+                        return resolve(file);
+                    }
+                } else {
+                    // Resolve the Promise when cursor is finished
+                    db.close()
+                    resolve();
+                }
+            };
+
+            cursorRequest.onerror = function () {
+                console.error("Cursor error:", cursorRequest.error);
+                db.close()
+                resolve();
+            };
+
+        };
+
+        request.onerror = function (event) {
+            reject(event.target.error);
+        };
+
+    })
+}
 
 self.addEventListener('message', function (event) {
     if (event.data === 'getOrganization')
