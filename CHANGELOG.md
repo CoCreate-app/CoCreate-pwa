@@ -1,3 +1,23 @@
+# [1.7.0](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.6.27...v1.7.0) (2023-08-16)
+
+
+### Bug Fixes
+
+* crud attributes renamed ([8a10139](https://github.com/CoCreate-app/CoCreate-pwa/commit/8a101397729dce29eaba6b2291abac729db33ec8))
+* incorrect manifest link in test3.html ([a210ccf](https://github.com/CoCreate-app/CoCreate-pwa/commit/a210ccf184149cf4cc4dc5f605a6136a754217cb))
+* link path to manifest.webmanifest in offline.html ([2209cbc](https://github.com/CoCreate-app/CoCreate-pwa/commit/2209cbc23e5a081bd14f29727f632e90b53a2ea1))
+* manifest.json renamed to manifest.webmanifest ([778ac4e](https://github.com/CoCreate-app/CoCreate-pwa/commit/778ac4ed48ffceab6ab804616f3bb1b00eb0a6e4))
+* replace -target -selector ([8e41cfd](https://github.com/CoCreate-app/CoCreate-pwa/commit/8e41cfd1a4bbc16bbc4c2ab9b1afb891afb7681b))
+* service worker path to use `service-worker.js` if not provided. ([1369041](https://github.com/CoCreate-app/CoCreate-pwa/commit/1369041bb4dd80c96b10ebde6d1e50d120c320f5))
+* webpack.config and package.json make use of mode=production instead of process.env ([1ec00c5](https://github.com/CoCreate-app/CoCreate-pwa/commit/1ec00c59224b8ba7815c5c7f525bdd1097feb5ea))
+
+
+### Features
+
+* add service-worker.js file and cache options using config or url encoded params. cache options: true, false, reload, prompt ([54bf9c9](https://github.com/CoCreate-app/CoCreate-pwa/commit/54bf9c9d92779edfe45175295c23625cdb62f011))
+* name attribute and variable renamed to key ([7700476](https://github.com/CoCreate-app/CoCreate-pwa/commit/7700476a465e53bfaccafb1d4608c7b80cee5315))
+* readFile function if server storage status is false to query indexeddb for file and send to server using header file-content. Server will respond with file as the body. Also server will send storage status to service-worker and update the variable for future requests. ([d03d392](https://github.com/CoCreate-app/CoCreate-pwa/commit/d03d39279d9b7a76703fec393975842b5776d266))
+
 ## [1.6.27](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.6.26...v1.6.27) (2023-06-14)
 
 
