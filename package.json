@@ -59,6 +59,6 @@
     "webpack-log": "^3.0.1"
   },
   "dependencies": {
-    "@cocreate/local-storage": "^1.7.21"
+    "@cocreate/local-storage": "^1.8.0"
   }
 }
