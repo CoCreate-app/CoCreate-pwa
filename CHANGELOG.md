@@ -1,3 +1,12 @@
+## [1.8.1](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.8.0...v1.8.1) (2023-08-21)
+
+
+### Bug Fixes
+
+* /dist/CoCreate.js updated to https://CoCreate.app/dist/CoCreate.js ([0c6819b](https://github.com/CoCreate-app/CoCreate-pwa/commit/0c6819b3c6c219524e8e7fd428a805319eee08dd))
+* replace cdn with /dist ([1e03fce](https://github.com/CoCreate-app/CoCreate-pwa/commit/1e03fce12a0c95bdb754c6cd15c39341352a80dd))
+* update file uploader ([d0382f8](https://github.com/CoCreate-app/CoCreate-pwa/commit/d0382f82be3c4d9507de39e3a16a55f70cc2ad4b))
+
 # [1.8.0](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.7.0...v1.8.0) (2023-08-17)
 
 
