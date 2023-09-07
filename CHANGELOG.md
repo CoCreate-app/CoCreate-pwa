@@ -1,3 +1,12 @@
+## [1.9.2](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.9.1...v1.9.2) (2023-09-07)
+
+
+### Bug Fixes
+
+* add manifest.webmanifest to src/ ([03f8793](https://github.com/CoCreate-app/CoCreate-pwa/commit/03f87938ccf1a1f5ade84d0ade6d080a52e310d0))
+* add offline.html to src/ ([2b55e6c](https://github.com/CoCreate-app/CoCreate-pwa/commit/2b55e6ca0715b158f6cee875902a32d42933092b))
+* respondWith resolving prematurely with async await ([1503a78](https://github.com/CoCreate-app/CoCreate-pwa/commit/1503a782533b7512051f6f527b852d649f90a6db))
+
 ## [1.9.1](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.9.0...v1.9.1) (2023-08-21)
 
 
