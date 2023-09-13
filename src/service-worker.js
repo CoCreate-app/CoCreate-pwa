@@ -50,9 +50,15 @@ self.addEventListener("fetch", async (e) => {
         let file = await readFile({
             database: '5ff747727005da1c272740ab',
             array: 'files',
-            filter: {
-                path: hostname,
-                host: '*'
+            object: {
+                $filter: {
+                    query: [
+                        {
+                            path: hostname,
+                            host: '*'
+                        }
+                    ]
+                }
             }
         });
 
@@ -151,7 +157,7 @@ function readFile(data) {
                         const file = cursor.value;
                         if (!file || !file.src || !file.path || !file.host)
                             cursor.continue();
-                        else if (file.path !== data.filter.path || !file.host.includes(data.filter.host))
+                        else if (file.path !== data.object.$filter.path || !file.host.includes(data.object.$filter.host))
                             cursor.continue();
                         else {
                             db.close()
