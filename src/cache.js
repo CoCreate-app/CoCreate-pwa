@@ -1,27 +1,36 @@
+import socket from "@cocreate/socket-client"
+
+// const cacheName = "dynamic-v2"
+
 const cacheBtn = document.getElementById('cacheBtn');
 
-function deleteCache(cache) {
-    if ('serviceWorker' in navigator) {
-        return caches.delete(key);
+function putFile(cacheName, data) {
+    if (!data.name || !data.path || !data.src || !data['content-type'])
+        return
+    // Open the cache and update it with the new file data
+    caches.open(cacheName).then((cache) => {
+        // Construct the URL for the file based on the fileObject's path and src
+        const fileUrl = new URL(data.name, window.location.origin + data.path).toString();
 
-        // caches.keys().then(function(cacheNames) {
-        //     cacheNames.forEach(function(cacheName) {
-        //         if (cacheName == cache)
-        //             caches.delete(cacheName);
-        //     });
-        // });
-    }
+        // Create a Response object with the file data
+        const fileResponse = new Response(data.src, {
+            headers: {
+                'Content-Type': data['content-type'],
+            },
+        });
+
+        // Update the cache with the new version (or add it if not in the cache)
+        cache.put(fileUrl, fileResponse).then(() => {
+            console.log(`Updated cache for ${fileUrl}`);
+        });
+    });
 }
 
-// function cleanCache(cacheName, numeroItems) {
-//     caches.open(cacheName).then((cache) => {
-//         return cache.keys().then((keys) => {
-//             if (keys.length > numeroItems) {
-//                 cache.delete(keys[0]).then(cleanCache(cacheName, numeroItems));
-//             }
-//         });
-//     });
-// }
+function deleteCache(cacheName) {
+    if ('serviceWorker' in navigator) {
+        return caches.delete(cacheName);
+    }
+}
 
 function deleteFile(cacheName, fileName) {
     if ('serviceWorker' in navigator) {
@@ -34,11 +43,23 @@ function deleteFile(cacheName, fileName) {
     }
 }
 
-
 if (cacheBtn) {
     cacheBtn.addEventListener('click', function () {
         deleteFile('dynamic-v2', '/CoCreate-components/CoCreate-pwa/src/index.js');
     });
 }
 
-export { deleteCache, deleteFile }
+function fileChange(data) {
+    if (!data.array === 'files' || !data.object)
+        return
+
+    for (let i = 0; i < data.object.length; i++)
+        putFile('test', data.object[i])
+}
+
+socket.listen('create.object', (data) => fileChange(data));
+socket.listen('read.object', (data) => fileChange(data));
+socket.listen('update.object', (data) => fileChange(data));
+socket.listen('delete.object', (data) => fileChange(data));
+
+export { putFile, deleteFile, deleteCache }
