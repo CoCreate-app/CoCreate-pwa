@@ -54,7 +54,7 @@ function fileChange(data) {
         return
 
     for (let i = 0; i < data.object.length; i++)
-        putFile('test', data.object[i])
+        putFile('dynamic-v2', data.object[i])
 }
 
 socket.listen('create.object', (data) => fileChange(data));
