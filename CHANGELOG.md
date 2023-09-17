@@ -1,3 +1,15 @@
+# [1.10.0](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.9.2...v1.10.0) (2023-09-17)
+
+
+### Bug Fixes
+
+* object.$filter ([1e73390](https://github.com/CoCreate-app/CoCreate-pwa/commit/1e73390bc97f840c54fb2043624bbeda622b63d9))
+
+
+### Features
+
+* cache updates dynaically using crud and sockert listener ([17e1646](https://github.com/CoCreate-app/CoCreate-pwa/commit/17e1646949ec49efc487e8e3cbcd565e5aa0c6b9))
+
 ## [1.9.2](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.9.1...v1.9.2) (2023-09-07)
 
 
