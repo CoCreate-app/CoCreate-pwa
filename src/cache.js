@@ -9,9 +9,6 @@ function putFile(cacheName, data) {
         return
     // Open the cache and update it with the new file data
     caches.open(cacheName).then((cache) => {
-        // Construct the URL for the file based on the fileObject's path and src
-        const fileUrl = new URL(data.name, window.location.origin + data.path).toString();
-
         // Create a Response object with the file data
         const fileResponse = new Response(data.src, {
             headers: {
@@ -20,6 +17,7 @@ function putFile(cacheName, data) {
         });
 
         // Update the cache with the new version (or add it if not in the cache)
+        const fileUrl = window.location.origin + data.pathname;
         cache.put(fileUrl, fileResponse).then(() => {
             console.log(`Updated cache for ${fileUrl}`);
         });
