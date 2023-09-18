@@ -8,17 +8,16 @@ module.exports = {
             "object": {
                 "_id": "637ca5ac50234ef1671ce327",
                 "name": "index.html",
-                "path": "/docs/pwa/index.html",
+                "path": "/docs/pwa",
+                "pathname": "/docs/pwa/index.html",
                 "src": "{{./docs/index.html}}",
                 "host": [
                     "cocreate.app",
                     "general.cocreate.app"
                 ],
-                "directory": "/docs/pwa",
-                "parentDirectory": "{{parentDirectory}}",
+                "directory": "pwa",
                 "content-type": "{{content-type}}",
-                "public": "true",
-                "website_id": "614298c2829b690010a5c031"
+                "public": "true"
             }
         }
     ]
