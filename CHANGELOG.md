@@ -1,3 +1,13 @@
+## [1.10.1](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.10.0...v1.10.1) (2023-09-18)
+
+
+### Bug Fixes
+
+*  Add path and pathname ([1eaa09c](https://github.com/CoCreate-app/CoCreate-pwa/commit/1eaa09c1bb7dab55868e02ac4b994b1464a4f38e))
+* bug in cache ([35229bc](https://github.com/CoCreate-app/CoCreate-pwa/commit/35229bc521e867ece5bc8140d9cdfcde0587220b))
+* set cache name ([35fcedd](https://github.com/CoCreate-app/CoCreate-pwa/commit/35fceddf099cb74a028a8ae2448e6d6ee4cb9ee4))
+* Update CoCreate depndencies to latest versions ([42fca0a](https://github.com/CoCreate-app/CoCreate-pwa/commit/42fca0a8852974cf5aec912e00c1b2d8dc7ff0f6))
+
 # [1.10.0](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.9.2...v1.10.0) (2023-09-17)
 
 
