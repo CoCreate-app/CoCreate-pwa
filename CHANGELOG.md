@@ -1,3 +1,10 @@
+## [1.10.2](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.10.1...v1.10.2) (2023-09-19)
+
+
+### Bug Fixes
+
+* fileUl using pathname ([b25f638](https://github.com/CoCreate-app/CoCreate-pwa/commit/b25f63862c27fdc0a68fb7b1ad10fe730f968e07))
+
 ## [1.10.1](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.10.0...v1.10.1) (2023-09-18)
 
 
