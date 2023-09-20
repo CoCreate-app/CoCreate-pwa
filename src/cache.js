@@ -1,25 +1,42 @@
 import socket from "@cocreate/socket-client"
 
 // const cacheName = "dynamic-v2"
-
 const cacheBtn = document.getElementById('cacheBtn');
 
 function putFile(cacheName, data) {
-    if (!data.name || !data.path || !data.src || !data['content-type'])
-        return
-    // Open the cache and update it with the new file data
-    caches.open(cacheName).then((cache) => {
-        // Create a Response object with the file data
-        const fileResponse = new Response(data.src, {
-            headers: {
-                'Content-Type': data['content-type'],
-            },
-        });
+    if (!data.name || !data.pathname || !data.src || !data['content-type'])
+        return;
 
-        // Update the cache with the new version (or add it if not in the cache)
-        const fileUrl = window.location.origin + data.pathname;
-        cache.put(fileUrl, fileResponse).then(() => {
-            console.log(`Updated cache for ${fileUrl}`);
+    caches.open(cacheName).then((cache) => {
+        cache.keys().then((keys) => {
+            let urls = new Map()
+            for (const key of keys) {
+                const url = new URL(key.url);
+                if (url.pathname === data.pathname) {
+                    if (data.host && data.host.includes('*') || data.host.some(host => url.origin.includes(host)))
+                        urls.set(key.url, true)
+                }
+            }
+
+            if (!urls.size)
+                cacheKeys.set(new URL(window.location.origin + data.pathname).toString(), true)
+
+            for (let fileUrl of urls.keys()) {
+                // Create a Response object with the new file data
+                const fileResponse = new Response(data.src, {
+                    headers: {
+                        'Content-Type': data['content-type'],
+                    }
+                });
+
+                // Update the cache with the new version (or add it if not in the cache)
+                cache.put(fileUrl, fileResponse).then(() => {
+                    console.log(`Cache updated: ${fileUrl}`);
+                }).catch(error => {
+                    console.error(`Cache update error: ${error}`);
+                });
+            }
+
         });
     });
 }
@@ -55,9 +72,11 @@ function fileChange(data) {
         putFile('dynamic-v2', data.object[i])
 }
 
-socket.listen('create.object', (data) => fileChange(data));
-socket.listen('read.object', (data) => fileChange(data));
-socket.listen('update.object', (data) => fileChange(data));
-socket.listen('delete.object', (data) => fileChange(data));
+if ('serviceWorker' in navigator) {
+    socket.listen('create.object', (data) => fileChange(data));
+    socket.listen('read.object', (data) => fileChange(data));
+    socket.listen('update.object', (data) => fileChange(data));
+    socket.listen('delete.object', (data) => fileChange(data));
+}
 
 export { putFile, deleteFile, deleteCache }
