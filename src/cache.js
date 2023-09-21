@@ -13,13 +13,13 @@ function putFile(cacheName, data) {
             for (const key of keys) {
                 const url = new URL(key.url);
                 if (url.pathname === data.pathname) {
-                    if (data.host && data.host.includes('*') || data.host.some(host => url.origin.includes(host)))
+                    if (!data.host || data.host.includes('*') || data.host.some(host => url.origin.includes(host)))
                         urls.set(key.url, true)
                 }
             }
 
-            if (!urls.size)
-                cacheKeys.set(new URL(window.location.origin + data.pathname).toString(), true)
+            if (!urls.size) return
+            // urls.set(new URL(window.location.origin + data.pathname).toString(), true)
 
             for (let fileUrl of urls.keys()) {
                 // Create a Response object with the new file data
@@ -65,6 +65,8 @@ if (cacheBtn) {
 }
 
 function fileChange(data) {
+    if (data.status === 'received' && data.clientId === socket.clientId)
+        return
     if (!data.array === 'files' || !data.object)
         return
 
