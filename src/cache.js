@@ -1,6 +1,6 @@
 import socket from "@cocreate/socket-client"
 
-// const cacheName = "dynamic-v2"
+// const cacheName = "dynamic-v2" te
 const cacheBtn = document.getElementById('cacheBtn');
 
 function putFile(cacheName, data) {
@@ -23,10 +23,17 @@ function putFile(cacheName, data) {
 
             for (let fileUrl of urls.keys()) {
                 // Create a Response object with the new file data
+                let modifiedOn = data.modified.on || data.created.on
+                if (modifiedOn instanceof Date)
+                    modifiedOn = modifiedOn.toISOString()
+
                 const fileResponse = new Response(data.src, {
                     headers: {
                         'Content-Type': data['content-type'],
+                        'organization': data.organization_id,
+                        'Last-Modified': modifiedOn,
                     }
+
                 });
 
                 // Update the cache with the new version (or add it if not in the cache)
@@ -88,25 +95,25 @@ navigator.serviceWorker.addEventListener("message", (event) => {
             const pathname = url.pathname;
             const origin = url.origin;
 
-            let { organization, modifiedDate } = event.data.returnedFromCache[file];
-            if (organization && modifiedDate) {
+            let { organization, lastModified } = event.data.returnedFromCache[file];
+            if (organization && lastModified) {
                 socket.send({
                     method: 'read.object',
                     array: 'files',
                     $filter: {
                         query: [
                             { key: 'pathname', operator: '$eq', value: pathname },
-                            { key: 'modified.on', operator: '$gt', value: modifiedDate }
+                            { key: 'modified.on', operator: '$gt', value: lastModified }
                         ]
                     }
                 }).then((data) => {
                     if (data.object && data.object[0]) {
                         fileChange(data)
-                        console.log('Send to cache', pathname, modifiedDate)
+                        console.log('Send to cache', pathname, lastModified)
                     }
                 })
             } else {
-                console.log('Send to fetch', { pathname, organization, modifiedDate })
+                console.log('Send to fetch', { pathname, organization, lastModified })
                 // fetch(file)
                 //     .then((response) => {
                 //         // Handle the response as needed
