@@ -88,8 +88,8 @@ navigator.serviceWorker.addEventListener("message", (event) => {
             const pathname = url.pathname;
             const origin = url.origin;
 
-            let modifiedDate = event.data.returnedFromCache[file];
-            if (modifiedDate) {
+            let { organization, modifiedDate } = event.data.returnedFromCache[file];
+            if (organization && modifiedDate) {
                 socket.send({
                     method: 'read.object',
                     array: 'files',
@@ -106,7 +106,7 @@ navigator.serviceWorker.addEventListener("message", (event) => {
                     }
                 })
             } else {
-                console.log('Send to fetch', pathname, modifiedDate)
+                console.log('Send to fetch', { pathname, organization, modifiedDate })
                 // fetch(file)
                 //     .then((response) => {
                 //         // Handle the response as needed
