@@ -81,4 +81,55 @@ if ('serviceWorker' in navigator) {
     socket.listen('delete.object', (data) => fileChange(data));
 }
 
+navigator.serviceWorker.addEventListener("message", (event) => {
+    if (event.data.action === 'checkCache') {
+        for (let file of Object.keys(event.data.returnedFromCache)) {
+            const url = new URL(file);
+            const pathname = url.pathname;
+            const origin = url.origin;
+
+            let modifiedDate = event.data.returnedFromCache[file];
+            if (modifiedDate) {
+                socket.send({
+                    method: 'read.object',
+                    array: 'files',
+                    $filter: {
+                        query: [
+                            { key: 'pathname', operator: '$eq', value: pathname },
+                            { key: 'modified.on', operator: '$gt', value: modifiedDate }
+                        ]
+                    }
+                }).then((data) => {
+                    if (data.object && data.object[0]) {
+                        fileChange(data)
+                        console.log('Send to cache', pathname, modifiedDate)
+                    }
+                })
+            } else {
+                console.log('Send to fetch', pathname, modifiedDate)
+                // fetch(file)
+                //     .then((response) => {
+                //         // Handle the response as needed
+                //     })
+                //     .catch((error) => {
+                //         // Handle fetch errors
+                //         console.error('Fetch error:', error);
+                //     });
+
+            }
+        }
+    }
+});
+
+window.addEventListener('load', function () {
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.ready.then(function (registration) {
+            if (registration.active) {
+                // Send a message to the service worker to execute a function.
+                registration.active.postMessage({ action: 'checkCache' });
+            }
+        });
+    }
+});
+
 export { putFile, deleteFile, deleteCache }
