@@ -20,7 +20,6 @@
 // you must obtain a commercial license from CoCreate LLC.
 // For details, visit <https://cocreate.app/licenses/> or contact us at sales@cocreate.app.
 
-import { deleteCache, deleteFile } from './cache.js'
 import localStorage from '@cocreate/local-storage'
 
 const button = document.querySelector('[actions*="install"]');
