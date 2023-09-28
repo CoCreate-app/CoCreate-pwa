@@ -125,4 +125,4 @@ if ('serviceWorker' in navigator) {
     }
 }
 
-export default { deleteCache, deleteFile, persistData }
+export default { persistData }
