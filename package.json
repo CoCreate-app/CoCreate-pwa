@@ -1,6 +1,6 @@
 {
   "name": "@cocreate/pwa",
-  "version": "1.13.1",
+  "version": "1.13.2",
   "description": "A simple pwa component in vanilla javascript. Easily configured using HTML5 data-attributes and/or JavaScript API.",
   "keywords": [
     "pwa",
