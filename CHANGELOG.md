@@ -1,3 +1,20 @@
+# [1.13.0](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.12.0...v1.13.0) (2023-10-09)
+
+
+### Bug Fixes
+
+* check data.status and clientId to prevent duplicate request ([3d2cff7](https://github.com/CoCreate-app/CoCreate-pwa/commit/3d2cff7e5d2eb6a83b13102039f66b218d770b23))
+* handle organization, and lastModified ([d4c819b](https://github.com/CoCreate-app/CoCreate-pwa/commit/d4c819b88f4334d68e95e2b7d2c7dc01562b5de5))
+* remove cache.js has been relocated CoCreate-cache ([224532a](https://github.com/CoCreate-app/CoCreate-pwa/commit/224532a01824f41adf5da7ced3ca83365c2507db))
+* removed deleteCache, deleteFile from export default ([7710ef5](https://github.com/CoCreate-app/CoCreate-pwa/commit/7710ef50a9fbcab6a5f17f0fddbce9251bb420e0))
+
+
+### Features
+
+* checkCache - check cache responses for last-modified and send.crud() read.object to see if the object has been modified. If crud returns objects add to cache. ([8c0eba3](https://github.com/CoCreate-app/CoCreate-pwa/commit/8c0eba35b2364b55d6e0e8fe896658491fad8ac3))
+* checkCache message event will dispatch client the returnedFromCache object containg all the cache responses during page load. {[url]: {organization, lastModified}} ([60f179c](https://github.com/CoCreate-app/CoCreate-pwa/commit/60f179c99a25402152da5951b2cd1ecd78a0b73b))
+* update cache using pathname and host ([8fb604b](https://github.com/CoCreate-app/CoCreate-pwa/commit/8fb604b820aac3c4a15ca81139edabe09f0de10c))
+
 # [1.12.0](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.11.0...v1.12.0) (2023-09-19)
 
 
