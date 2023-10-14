@@ -1,3 +1,10 @@
+## [1.13.4](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.13.3...v1.13.4) (2023-10-14)
+
+
+### Bug Fixes
+
+* bump dependencies ([bb26ab3](https://github.com/CoCreate-app/CoCreate-pwa/commit/bb26ab3f61d9767be32e122b0e0b0f5027901dea))
+
 ## [1.13.3](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.13.2...v1.13.3) (2023-10-09)
 
 
