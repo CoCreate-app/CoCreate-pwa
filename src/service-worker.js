@@ -42,7 +42,7 @@ self.addEventListener("activate", async (e) => {
 
 self.addEventListener("fetch", async (e) => {
     if (!(e.request.url.indexOf('http') === 0) || e.request.method === 'POST') return;
-
+    // TODO: check file header for cache policies and cache accorddingly
     e.respondWith(
         caches
             .match(e.request)
