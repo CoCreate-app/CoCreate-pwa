@@ -93,7 +93,7 @@ if ('serviceWorker' in navigator) {
     if (window.CoCreateConfig && window.CoCreateConfig.cache)
         cache = window.CoCreateConfig.cache
     else
-        cache = localStorage.getItem("cache") || 'false'
+        cache = localStorage.getItem("cache") || 'true'
 
     localStorage.setItem("cache", cache);
     workerPath += `?cache=${cache}`
