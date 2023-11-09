@@ -1,3 +1,16 @@
+# [1.14.0](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.13.7...v1.14.0) (2023-11-09)
+
+
+### Bug Fixes
+
+* meta name typo ([3c58a5e](https://github.com/CoCreate-app/CoCreate-pwa/commit/3c58a5ead6d509fb6cf63e57c0c3bc58e21a1e1d))
+* update crud methods ([1b5236c](https://github.com/CoCreate-app/CoCreate-pwa/commit/1b5236c3c91610d9420f96584fbd195eb9c90078))
+
+
+### Features
+
+* debounce an array of files served from cache and send to client ([4daa134](https://github.com/CoCreate-app/CoCreate-pwa/commit/4daa1344a06049667c22fa6dab8aa229678d726e))
+
 ## [1.13.7](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.13.6...v1.13.7) (2023-11-03)
 
 
