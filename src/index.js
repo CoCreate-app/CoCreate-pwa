@@ -75,13 +75,6 @@ function init() {
         window.deferredPrompt = null;
     });
 
-    async function persistData() {
-        if (navigator.storage && navigator.storage.persist) {
-            const result = await navigator.storage.persist();
-            //   console.log(`Data persisted: ${result}`);
-        }
-    }
-
     if ('serviceWorker' in navigator) {
         let workerPath
         if (window.CoCreateConfig && window.CoCreateConfig.serviceWorker)
@@ -125,6 +118,13 @@ function init() {
             });
 
         }
+    }
+}
+
+async function persistData() {
+    if (navigator.storage && navigator.storage.persist) {
+        const result = await navigator.storage.persist();
+        //   console.log(`Data persisted: ${result}`);
     }
 }
 
