@@ -1,3 +1,16 @@
+# [1.15.0](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.14.0...v1.15.0) (2023-11-12)
+
+
+### Bug Fixes
+
+* bump dependencies for latest features ([f786f81](https://github.com/CoCreate-app/CoCreate-pwa/commit/f786f812e921d612b932ddaa7b8d3088ac98a410))
+* relocated persit function out of init ([7725508](https://github.com/CoCreate-app/CoCreate-pwa/commit/7725508a023ece5b231387556849893b845ece73))
+
+
+### Features
+
+* observe actions=install ([d1f7aea](https://github.com/CoCreate-app/CoCreate-pwa/commit/d1f7aeae233cc8c3d531f66f982ef47e56280d92))
+
 # [1.14.0](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.13.7...v1.14.0) (2023-11-09)
 
 
