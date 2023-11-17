@@ -121,6 +121,8 @@ function init() {
     }
 }
 
+init()
+
 async function persistData() {
     if (navigator.storage && navigator.storage.persist) {
         const result = await navigator.storage.persist();
