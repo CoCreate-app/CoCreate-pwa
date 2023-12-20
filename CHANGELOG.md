@@ -1,3 +1,10 @@
+## [1.18.1](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.18.0...v1.18.1) (2023-12-20)
+
+
+### Bug Fixes
+
+* networkResponse conditions ([4fb4439](https://github.com/CoCreate-app/CoCreate-pwa/commit/4fb443934b5f68cfe2bd1f5955bfe4521006a853))
+
 # [1.18.0](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.17.0...v1.18.0) (2023-11-25)
 
 
