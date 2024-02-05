@@ -1,3 +1,10 @@
+## [1.18.2](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.18.1...v1.18.2) (2024-02-05)
+
+
+### Bug Fixes
+
+* Removed https://cdn.cocreate.app/latest/CoCreate.min.css ([03e4be8](https://github.com/CoCreate-app/CoCreate-pwa/commit/03e4be884c707cc2d200aba42c44ea8d8e012dd9))
+
 ## [1.18.1](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.18.0...v1.18.1) (2023-12-20)
 
 
