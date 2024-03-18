@@ -1,3 +1,10 @@
+# [1.19.0](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.18.2...v1.19.0) (2024-03-18)
+
+
+### Features
+
+* web share api using share, share-title, share-text, share-url ([b760a1f](https://github.com/CoCreate-app/CoCreate-pwa/commit/b760a1f5ae4b9376b4adac3b9456b706d83f9fbc))
+
 ## [1.18.2](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.18.1...v1.18.2) (2024-02-05)
 
 
