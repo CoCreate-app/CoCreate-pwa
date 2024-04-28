@@ -1,3 +1,10 @@
+## [1.19.1](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.19.0...v1.19.1) (2024-04-28)
+
+
+### Bug Fixes
+
+* uncommented checkCache ([7372303](https://github.com/CoCreate-app/CoCreate-pwa/commit/737230325c59346687b699b3dfc0496be038f5a6))
+
 # [1.19.0](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.18.2...v1.19.0) (2024-03-18)
 
 
