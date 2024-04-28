@@ -1,3 +1,10 @@
+## [1.19.2](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.19.1...v1.19.2) (2024-04-28)
+
+
+### Bug Fixes
+
+* organization bug ([c3b5f22](https://github.com/CoCreate-app/CoCreate-pwa/commit/c3b5f22a929b56b2d294b46d30e90c684fa5415c))
+
 ## [1.19.1](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.19.0...v1.19.1) (2024-04-28)
 
 
