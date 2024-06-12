@@ -1,3 +1,11 @@
+## [1.19.4](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.19.3...v1.19.4) (2024-06-12)
+
+
+### Bug Fixes
+
+* bump cocreate dependencies ([0477a4c](https://github.com/CoCreate-app/CoCreate-pwa/commit/0477a4c08c12cc3516a1927b5556bf40268f7c85))
+* svg icon class ([a1cc6a2](https://github.com/CoCreate-app/CoCreate-pwa/commit/a1cc6a2bbad2c243263b7b9a4f7a58d079a4b32c))
+
 ## [1.19.3](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.19.2...v1.19.3) (2024-04-29)
 
 
