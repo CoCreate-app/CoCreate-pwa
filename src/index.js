@@ -134,7 +134,7 @@ async function persistData() {
 observer.init({
     name: 'initPwa',
     observe: ['addedNodes'],
-    target: '[actions="install"]',
+    selector: '[actions="install"]',
     callback: (mutation) => {
         init()
     }

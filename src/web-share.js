@@ -63,7 +63,7 @@ function share(element) {
 Observer.init({
     name: 'webshare',
     observe: ['addedNodes'],
-    target: '[share]',
+    selector: '[share]',
     callback: (mutation) => {
         init(mutation.target)
     }
