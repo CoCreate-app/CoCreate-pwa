@@ -1,3 +1,16 @@
+# [1.20.0](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.19.4...v1.20.0) (2024-11-04)
+
+
+### Bug Fixes
+
+* observer taget has been renamed to selector ([9f13f9d](https://github.com/CoCreate-app/CoCreate-pwa/commit/9f13f9d8e259c790a5b37ba9cc2d1f563cc14484))
+* pretier.config.js and file formating ([77421cc](https://github.com/CoCreate-app/CoCreate-pwa/commit/77421cc3636d3ddb56afc764443c596aaf26e5d9))
+
+
+### Features
+
+* add prettier.config.js and format files ([2cb51a6](https://github.com/CoCreate-app/CoCreate-pwa/commit/2cb51a69aed9023c80102bc586f67916aec06ce3))
+
 ## [1.19.4](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.19.3...v1.19.4) (2024-06-12)
 
 
