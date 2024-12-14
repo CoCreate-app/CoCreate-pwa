@@ -1,3 +1,10 @@
+# [1.21.0](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.20.0...v1.21.0) (2024-12-14)
+
+
+### Features
+
+* dynamic theme handling ([c2688f2](https://github.com/CoCreate-app/CoCreate-pwa/commit/c2688f2f148f0c68e3693cf932a24976658eb475))
+
 # [1.20.0](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.19.4...v1.20.0) (2024-11-04)
 
 
