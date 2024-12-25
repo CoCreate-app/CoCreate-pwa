@@ -25,6 +25,7 @@
 import observer from "@cocreate/observer";
 import localStorage from "@cocreate/local-storage";
 import "./web-share";
+import "./geolocation";
 // import "./theme";
 
 /**

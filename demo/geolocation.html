@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Geolocation Web API Demo</title>
+	</head>
+	<body>
+		<form id="locationForm">
+			<input
+				geolocation="getCurrentPosition"
+				geolocation-key="coords.latitude"
+				placeholder="Latitude" />
+			<input
+				geolocation="getCurrentPosition"
+				geolocation-key="coords.longitude"
+				placeholder="Longitude" />
+			<input
+				geolocation="getCurrentPosition"
+				geolocation-key="coords.accuracy"
+				placeholder="Accuracy (meters)" />
+			<button actions="geoLocation.getCurrentPosition">
+				Get Location
+			</button>
+		</form>
+
+		<form id="trackLocationForm">
+			<input
+				geolocation="watchPosition"
+				geolocation-key="id"
+				placeholder="id"
+				input-next
+				input-attribute="value" />
+			<input
+				geolocation="clearWatch"
+				geolocation-key="id"
+				placeholder="id" />
+			<input
+				geolocation="watchPosition"
+				geolocation-key="coords.latitude"
+				placeholder="Latitude" />
+			<input
+				geolocation="watchPosition"
+				geolocation-key="coords.longitude"
+				placeholder="Longitude" />
+			<input
+				geolocation="watchPosition"
+				geolocation-key="coords.speed"
+				placeholder="Speed (m/s)" />
+			<button actions="geoLocation.watchPosition">Start Tracking</button>
+			<button actions="geoLocation.clearWatch">Stop Tracking</button>
+		</form>
+
+		<form id="errorForm">
+			<input
+				geolocation="getCurrentPosition"
+				geolocation-key="coords.latitude"
+				placeholder="Latitude" />
+			<input
+				geolocation="getCurrentPosition"
+				geolocation-key="coords.longitude"
+				placeholder="Longitude" />
+			<input
+				geolocation="getCurrentPosition"
+				geolocation-key="error.message"
+				placeholder="Error Message" />
+			<button actions="geoLocation.getCurrentPosition">
+				Get Location
+			</button>
+		</form>
+		<script src="./dist/CoCreate.js"></script>
+	</body>
+</html>
