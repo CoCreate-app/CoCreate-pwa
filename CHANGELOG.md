@@ -1,3 +1,10 @@
+# [1.22.0](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.21.0...v1.22.0) (2025-01-18)
+
+
+### Features
+
+* geolocation intergration ([4bc95fb](https://github.com/CoCreate-app/CoCreate-pwa/commit/4bc95fb1192efec090da1a45698f347376427d44))
+
 # [1.21.0](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.20.0...v1.21.0) (2024-12-14)
 
 
