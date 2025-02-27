@@ -65,7 +65,7 @@ function handleError(error, action) {
 }
 
 function dispatchEvent(action) {
-	document.dispatchEvent(
+	action.element.dispatchEvent(
 		new CustomEvent(action.endEvent, {
 			detail: {
 				data: action
