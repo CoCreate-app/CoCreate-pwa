@@ -23,60 +23,68 @@
  * For details, visit <https://cocreate.app/licenses/> or contact us at sales@cocreate.app.
  */
 
-import Observer from '@cocreate/observer'
-import Actions from '@cocreate/actions'
+import Observer from "@cocreate/observer";
+import Actions from "@cocreate/actions";
 
 const selector = "[share]";
 
 async function init(element) {
-    if (element && !(element instanceof HTMLCollection) && !Array.isArray(element))
-        element = [element]
-    else if (!element) {
-        element = document.querySelectorAll(selector)
-    }
+	if (
+		element &&
+		!(element instanceof HTMLCollection) &&
+		!Array.isArray(element)
+	)
+		element = [element];
+	else if (!element) {
+		element = document.querySelectorAll(selector);
+	}
 
-    for (let i = 0; i < element.length; i++)
-        element[i].addEventListener('click', function (e) {
-            share(e.target);
-        });
-
+	for (let i = 0; i < element.length; i++)
+		element[i].addEventListener("click", function (e) {
+			share(e.target);
+		});
 }
 
 function share(element) {
-    if (navigator.share && element) {
-        let title = element.getAttribute('share-title') || document.title;
-        let text = element.getAttribute('share-text') || document.querySelector('meta[name="description"]')?.content || '';
-        let url = element.getAttribute('share-url') || window.location.href;
+	if (navigator.share && element) {
+		let title = element.getAttribute("share-title") || document.title;
+		let text =
+			element.getAttribute("share-text") ||
+			document.querySelector('meta[name="description"]')?.content ||
+			"";
+		let url = element.getAttribute("share-url") || window.location.href;
 
-        navigator.share({
-            title: title,
-            text: text,
-            url: url
-        })
-            .then(() => console.log('Successful share'))
-            .catch((error) => console.log('Error sharing', error));
-    } else {
-        console.log('Web Share API is not supported or element is not provided.');
-    }
+		navigator
+			.share({
+				title: title,
+				text: text,
+				url: url
+			})
+			.then(() => console.log("Successful share"))
+			.catch((error) => console.log("Error sharing", error));
+	} else {
+		console.log(
+			"Web Share API is not supported or element is not provided."
+		);
+	}
 }
 
 Observer.init({
-    name: 'webshare',
-    observe: ['addedNodes'],
-    selector: '[share]',
-    callback: (mutation) => {
-        init(mutation.target)
-    }
+	name: "webshare",
+	types: ["addedNodes"],
+	selector: "[share]",
+	callback: (mutation) => {
+		init(mutation.target);
+	}
 });
 
 Actions.init({
-    name: "share",
-    callback: (action) => {
-        share(action.element);
-    }
-})
+	name: "share",
+	callback: (action) => {
+		share(action.element);
+	}
+});
 
-init()
+init();
 
-export default { init }
-
+export default { init };
