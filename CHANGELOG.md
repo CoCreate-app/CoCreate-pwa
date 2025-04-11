@@ -1,3 +1,11 @@
+## [1.22.1](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.22.0...v1.22.1) (2025-04-11)
+
+
+### Bug Fixes
+
+* dispatch end event on action element rather than document ([c14b2f3](https://github.com/CoCreate-app/CoCreate-pwa/commit/c14b2f3e92e50f3487aefd66a479e4222c835ab6))
+* update observer observe param to type and and attributeName to attributeFilter ([5545765](https://github.com/CoCreate-app/CoCreate-pwa/commit/554576546507eda1c7577ae593e5c660572ba774))
+
 # [1.22.0](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.21.0...v1.22.0) (2025-01-18)
 
 
