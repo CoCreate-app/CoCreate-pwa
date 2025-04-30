@@ -1,3 +1,13 @@
+## [1.22.2](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.22.1...v1.22.2) (2025-04-30)
+
+
+### Bug Fixes
+
+* added css-loader ([278cf60](https://github.com/CoCreate-app/CoCreate-pwa/commit/278cf6040b9d122e8e26459a4e7e367230154f4a))
+* update query attributes ([dca7463](https://github.com/CoCreate-app/CoCreate-pwa/commit/dca746308c527285c7d6a1bfa17da935cc50db31))
+* updated cocreate modules versions ([a710f90](https://github.com/CoCreate-app/CoCreate-pwa/commit/a710f9049a21e4323577969db76a8c82215112cc))
+* webpack.config and devdependencies ([23eb371](https://github.com/CoCreate-app/CoCreate-pwa/commit/23eb37119f2ae090999cf52b6a597f0b2d272bd7))
+
 ## [1.22.1](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.22.0...v1.22.1) (2025-04-11)
 
 
