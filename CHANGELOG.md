@@ -1,3 +1,10 @@
+## [1.22.4](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.22.3...v1.22.4) (2025-12-25)
+
+
+### Bug Fixes
+
+* default cache to false ([0a72a74](https://github.com/CoCreate-app/CoCreate-pwa/commit/0a72a748a195daed47b80d9f7e4d4e8bbfcb0828))
+
 ## [1.22.3](https://github.com/CoCreate-app/CoCreate-pwa/compare/v1.22.2...v1.22.3) (2025-05-01)
 
 
