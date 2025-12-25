@@ -89,7 +89,7 @@ function init() {
 		let cache;
 		if (window.CoCreateConfig && window.CoCreateConfig.cache)
 			cache = window.CoCreateConfig.cache;
-		else cache = localStorage.getItem("cache") || "true";
+		else cache = localStorage.getItem("cache") || "false";
 
 		localStorage.setItem("cache", cache);
 		workerPath += `?cache=${cache}`;
